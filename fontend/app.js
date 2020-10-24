@@ -7,7 +7,7 @@ angular
                 templateUrl: 'index.html',
                 controller : 'nomadsController'
             })
-            .when("/", {
+            .when("/producto", {
                 templateUrl: 'producto.html',
                 controller : 'nomadsController'
             })
