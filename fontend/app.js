@@ -1,16 +1,38 @@
-angular.module('nomads', ['ngRoute'])
+angular
+    .module("nomads", ["ngRoute"])
+
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when("/", {
+                templateUrl: 'index.html',
+                controller : 'nomadsController'
+            })
+            .when("/", {
+                templateUrl: 'producto.html',
+                controller : 'nomadsController'
+            })
+    })
+
     .controller('nomadsController', function () {
         var nomads = this;
+
+        nomads.categorias = {
+            backpacks: false,
+            purses: false,
+            carteras: false,
+            coala: false,
+        }
         nomads.filtro = {
-            nombre: '',
-            precioDesde: 0,
-            precioHasta: 500,
-            categoria: null,
+            nombre: null,
+            precioDesde: null,
+            precioHasta: null,
+            categoria: nomads.categorias,
         }
 
         nomads.filtrar = function () {
             console.log(nomads.filtro)
         }
+
 
         nomads.Lista = [
             {
